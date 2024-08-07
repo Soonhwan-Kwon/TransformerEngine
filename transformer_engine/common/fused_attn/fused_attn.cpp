@@ -92,8 +92,6 @@ NVTE_Fused_Attn_Backend nvte_get_fused_attn_backend(
 #if (CUDNN_VERSION < 8900)
     if (backend == NVTE_Fused_Attn_Backend::NVTE_F16_arbitrary_seqlen) {
       backend = NVTE_Fused_Attn_Backend::NVTE_No_Backend;
-      std::cout << "Warning: FP16/BF16 fused attention is supported by cuDNN 8.9.0+."
-           " Please upgrade your cuDNN version if possible." << std::endl;
     }
 #endif
   } else {
